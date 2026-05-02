@@ -3,83 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brandvalley — The UK's Performance UGC Marketplace</title>
+    <title>HypeNex — The Hub Where Hype Is Born</title>
     <meta name="description" content="Brands pay per view. Creators earn per view. The UK's first performance-only UGC marketplace — no flat fees, no guesswork, just results.">
-    <meta property="og:title" content="Brandvalley — Brands pay per view. Creators earn per view.">
-    <meta property="og:description" content="The UK's first performance-only UGC marketplace. Zero upfront cost for brands. Real earnings for creators.">
+    <meta property="og:title" content="HypeNex — The hub where hype is born and brands connect">
+    <meta property="og:description" content="The UK's first performance-only UGC marketplace. Brands pay per view. Creators earn per view.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://brandvalley.co.uk">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --navy:       #012169; /* Union Jack blue */
-            --navy-dark:  #001144;
-            --navy-mid:   #1a3a8f;
-            --navy-light: #e8edf8;
-            --red:        #C8102E; /* Union Jack red */
-            --red-dark:   #9e0c24;
-            --red-light:  #fceef1;
-            --white:      #ffffff;
-            --off-white:  #f8f8f6;
-            --ink:        #0d0d0d;
-            --ink-soft:   #4a4a5a;
-            --border:     #e2e4ea;
-            --transition: all 0.22s ease;
+            --black:   #08080d;
+            --black2:  #0f0f18;
+            --card-bg: #13131f;
+            --purple:  #7b2fff;
+            --purple2: #9d5fff;
+            --purple3: #c49dff;
+            --glow:    rgba(123,47,255,0.35);
+            --white:   #ffffff;
+            --grey:    #a0a0b8;
+            --border:  rgba(123,47,255,0.25);
+            --border2: rgba(255,255,255,0.07);
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--white);
-            color: var(--ink);
-            -webkit-font-smoothing: antialiased;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--black);
+            color: var(--white);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ── UTILS ── */
-        .hidden { display: none; }
-        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        /* subtle noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed; inset: 0; z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
         /* ── NAV ── */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 200;
-            padding: 0 40px; height: 66px;
+            padding: 0 40px; height: 64px;
             display: flex; align-items: center; justify-content: space-between;
-            background: transparent;
-            transition: var(--transition);
+            transition: background 0.3s, border-bottom 0.3s;
         }
         nav.scrolled {
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 16px rgba(1,33,105,0.06);
+            background: rgba(8,8,13,0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border2);
         }
         .logo {
-            font-size: 1.35rem; font-weight: 800;
-            color: var(--navy); letter-spacing: -0.03em;
-            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.7rem; letter-spacing: 0.04em;
+            color: var(--white); text-decoration: none;
         }
-        .logo span { color: var(--red); }
-        .nav-right { display: flex; gap: 10px; align-items: center; }
+        .logo span { color: var(--purple); }
+        .nav-right { display: flex; gap: 10px; }
         .btn {
-            font-family: 'Inter', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             font-size: 13px; font-weight: 600;
-            padding: 9px 20px; border-radius: 7px;
+            padding: 9px 20px; border-radius: 6px;
             text-decoration: none; border: none; cursor: pointer;
-            transition: var(--transition); display: inline-block; text-align: center;
+            transition: all 0.2s; display: inline-block; text-align: center;
         }
-        .btn-ghost { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
-        .btn-ghost:hover { background: var(--navy-light); border-color: var(--navy); }
-        .btn-primary { background: var(--navy); color: var(--white); }
-        .btn-primary:hover { background: var(--navy-mid); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(1,33,105,0.25); }
-        .btn-red { background: var(--red); color: var(--white); }
-        .btn-red:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(200,16,46,0.25); }
+        .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--border2); }
+        .btn-ghost:hover { border-color: var(--purple); color: var(--purple); }
+        .btn-purple {
+            background: var(--purple); color: var(--white);
+            box-shadow: 0 0 18px var(--glow);
+        }
+        .btn-purple:hover { background: var(--purple2); transform: translateY(-1px); box-shadow: 0 0 28px var(--glow); }
 
         /* ── HERO ── */
         .hero {
@@ -87,279 +90,300 @@
             display: flex; flex-direction: column;
             align-items: center; justify-content: center;
             text-align: center;
-            padding: 130px 24px 90px;
-            background: var(--white);
+            padding: 140px 24px 100px;
             position: relative; overflow: hidden;
         }
-        /* subtle union jack-inspired diagonal accent */
-        .hero::before {
-            content: '';
-            position: absolute; top: 0; right: 0;
-            width: 50%; height: 100%;
-            background: linear-gradient(135deg, transparent 60%, rgba(1,33,105,0.03) 100%);
+        /* radial glow behind hero text */
+        .hero-glow {
+            position: absolute; top: 20%; left: 50%;
+            transform: translateX(-50%);
+            width: 700px; height: 400px;
+            background: radial-gradient(ellipse, rgba(123,47,255,0.18) 0%, transparent 70%);
             pointer-events: none;
         }
+        /* animated grid lines */
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(123,47,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(123,47,255,0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 100%);
+        }
+
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background: var(--navy-light); border: 1px solid rgba(1,33,105,0.15);
+            background: rgba(123,47,255,0.12);
+            border: 1px solid var(--border);
             border-radius: 100px; padding: 6px 16px 6px 8px;
-            font-size: 12px; font-weight: 600; color: var(--navy);
+            font-size: 12px; font-weight: 600; color: var(--purple3);
             margin-bottom: 32px;
-            animation: fadeUp 0.55s ease both;
+            animation: fadeUp 0.5s ease both;
         }
         .live-dot {
             width: 8px; height: 8px; border-radius: 50%;
-            background: #16a34a;
-            box-shadow: 0 0 0 3px rgba(22,163,74,0.2);
-            animation: livepulse 2s infinite;
+            background: #22c55e;
+            box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+            animation: pulse 2s infinite;
         }
-        @keyframes livepulse {
-            0%,100% { box-shadow: 0 0 0 3px rgba(22,163,74,0.2); }
-            50%      { box-shadow: 0 0 0 7px rgba(22,163,74,0.08); }
-        }
+        @keyframes pulse { 0%,100%{box-shadow:0 0 0 3px rgba(34,197,94,0.2)} 50%{box-shadow:0 0 0 7px rgba(34,197,94,0.07)} }
+
         .hero h1 {
-            font-size: clamp(2.6rem, 6.5vw, 5rem);
-            font-weight: 800; line-height: 1.06;
-            letter-spacing: -0.04em; color: var(--ink);
-            max-width: 820px; margin-bottom: 24px;
-            animation: fadeUp 0.55s 0.08s ease both;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 11vw, 9rem);
+            line-height: 0.95; letter-spacing: 0.02em;
+            color: var(--white);
+            margin-bottom: 8px;
+            animation: fadeUp 0.5s 0.08s ease both;
         }
-        .hero h1 .accent-blue { color: var(--navy); }
-        .hero h1 .accent-red  { color: var(--red); }
+        .hero h1 .hn { color: var(--purple); text-shadow: 0 0 40px var(--glow); }
+        .hero-tagline {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.6rem);
+            letter-spacing: 0.15em;
+            color: var(--grey);
+            margin-bottom: 28px;
+            animation: fadeUp 0.5s 0.14s ease both;
+        }
         .hero-sub {
-            font-size: clamp(1rem, 2.2vw, 1.18rem);
-            color: var(--ink-soft); max-width: 560px;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: var(--grey); max-width: 520px;
             line-height: 1.75; margin-bottom: 44px;
-            animation: fadeUp 0.55s 0.16s ease both;
+            animation: fadeUp 0.5s 0.2s ease both;
         }
         .hero-ctas {
             display: flex; gap: 12px; flex-wrap: wrap;
-            justify-content: center; margin-bottom: 56px;
-            animation: fadeUp 0.55s 0.24s ease both;
+            justify-content: center;
+            animation: fadeUp 0.5s 0.26s ease both;
         }
-        .hero-ctas .btn { font-size: 15px; padding: 13px 28px; }
+        .hero-ctas .btn { font-size: 15px; padding: 13px 30px; }
         .platform-row {
-            display: flex; align-items: center; gap: 10px;
-            flex-wrap: wrap; justify-content: center;
-            animation: fadeUp 0.55s 0.32s ease both;
+            margin-top: 56px; display: flex; align-items: center;
+            gap: 10px; flex-wrap: wrap; justify-content: center;
+            animation: fadeUp 0.5s 0.34s ease both;
         }
-        .platform-row p { font-size: 12px; color: #9ca3af; font-weight: 500; margin-right: 4px; }
+        .platform-row p { font-size: 12px; color: rgba(160,160,184,0.6); font-weight: 500; }
         .platform-pill {
             display: flex; align-items: center; gap: 7px;
-            background: var(--off-white); border: 1px solid var(--border);
+            background: var(--card-bg);
+            border: 1px solid var(--border2);
             border-radius: 100px; padding: 6px 14px;
-            font-size: 12px; font-weight: 600; color: var(--ink);
+            font-size: 12px; font-weight: 600; color: var(--grey);
         }
         .pdot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-        .pdot-tt { background: #010101; }
+        .pdot-tt { background: #ffffff; }
         .pdot-ig { background: #e1306c; }
         .pdot-yt { background: #ff0000; }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(18px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
         /* ── STATS BAR ── */
-        .stats-bar { background: var(--navy); padding: 36px 24px; }
+        .stats-bar {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border2);
+            border-bottom: 1px solid var(--border2);
+            padding: 32px 24px; position: relative; z-index: 1;
+        }
         .stats-grid {
             max-width: 900px; margin: 0 auto;
             display: grid; grid-template-columns: repeat(4,1fr);
             gap: 20px; text-align: center;
         }
         .stat-val {
-            font-size: 2rem; font-weight: 800;
-            color: var(--white); letter-spacing: -0.03em;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.4rem; color: var(--purple);
+            letter-spacing: 0.03em;
+            text-shadow: 0 0 20px var(--glow);
         }
-        .stat-lbl { font-size: 11.5px; color: #93c5fd; font-weight: 500; margin-top: 4px; }
+        .stat-lbl { font-size: 11.5px; color: var(--grey); font-weight: 500; margin-top: 4px; }
 
-        /* ── SECTION BASE ── */
-        section { padding: 96px 0; }
+        /* ── SECTIONS ── */
+        section { padding: 100px 0; position: relative; z-index: 1; }
         .section-tag {
             font-size: 11px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.1em; display: block; margin-bottom: 12px;
+            letter-spacing: 0.12em; color: var(--purple); display: block; margin-bottom: 14px;
         }
-        .tag-red  { color: var(--red); }
-        .tag-navy { color: var(--navy); }
         .section-title {
-            font-size: clamp(1.75rem, 3.8vw, 2.7rem);
-            font-weight: 800; line-height: 1.14;
-            letter-spacing: -0.025em; margin-bottom: 14px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.0; letter-spacing: 0.02em;
+            color: var(--white); margin-bottom: 16px;
         }
         .section-sub {
-            font-size: 1.02rem; color: var(--ink-soft);
+            font-size: 1.02rem; color: var(--grey);
             line-height: 1.75; max-width: 520px; margin-bottom: 52px;
         }
 
         /* ── PROBLEM ── */
-        .problem-section { background: var(--navy-dark); }
-        .problem-section .section-title { color: var(--white); }
-        .problem-section .section-sub { color: rgba(255,255,255,0.55); max-width: 600px; }
-        .problem-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
-            border-radius: 14px; overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.07);
-        }
+        .problem-section { background: var(--black2); }
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
         .prob-card {
-            background: rgba(255,255,255,0.03);
-            padding: 36px; border: 1px solid rgba(255,255,255,0.06);
-            transition: background 0.2s;
+            background: var(--card-bg);
+            padding: 36px; border: 1px solid var(--border2);
+            transition: border-color 0.2s;
         }
-        .prob-card:hover { background: rgba(255,255,255,0.06); }
-        .prob-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: block; }
-        .prob-tag-red  { color: #fca5a5; }
-        .prob-tag-blue { color: #93c5fd; }
-        .prob-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
-        .prob-card p  { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.75; }
+        .prob-card:hover { border-color: var(--border); }
+        .prob-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; display: block; }
+        .tag-purple { color: var(--purple2); }
+        .tag-grey   { color: var(--grey); }
+        .prob-card h3 { font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 10px; line-height: 1.4; }
+        .prob-card p  { font-size: 13.5px; color: var(--grey); line-height: 1.75; }
 
         /* ── HOW IT WORKS ── */
-        .how-section { background: var(--off-white); }
+        .how-section { background: var(--black); }
         .how-toggle {
             display: inline-flex;
-            border: 1.5px solid var(--border); border-radius: 8px;
+            border: 1px solid var(--border2); border-radius: 8px;
             overflow: hidden; margin-bottom: 44px;
         }
-        .how-toggle-btn {
+        .how-tab {
             padding: 9px 28px; font-size: 13px; font-weight: 600;
-            background: transparent; color: var(--ink-soft);
+            background: transparent; color: var(--grey);
             border: none; cursor: pointer;
-            transition: var(--transition); font-family: 'Inter', sans-serif;
+            font-family: 'DM Sans', sans-serif; transition: all 0.2s;
         }
-        .how-toggle-btn:first-child { border-right: 1.5px solid var(--border); }
-        .how-toggle-btn.active { background: var(--navy); color: var(--white); }
+        .how-tab:first-child { border-right: 1px solid var(--border2); }
+        .how-tab.active { background: var(--purple); color: var(--white); }
         .how-steps { display: none; }
-        .how-steps.active { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .how-steps.active { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
         .step-card {
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 14px; padding: 36px;
+            background: var(--card-bg);
+            border: 1px solid var(--border2);
+            border-radius: 12px; padding: 32px;
             position: relative; overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: border-color 0.2s, transform 0.2s;
         }
-        .step-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(1,33,105,0.1); }
+        .step-card:hover { border-color: var(--border); transform: translateY(-3px); }
         .step-card::before {
             content: attr(data-num);
-            position: absolute; top: -8px; right: 14px;
-            font-size: 5.5rem; font-weight: 800;
-            color: var(--navy-light); line-height: 1;
-            pointer-events: none; user-select: none;
+            position: absolute; top: -12px; right: 12px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem; color: rgba(123,47,255,0.08);
+            line-height: 1; pointer-events: none; user-select: none;
         }
-        .step-icon { font-size: 1.7rem; margin-bottom: 18px; }
-        .step-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-        .step-card p  { font-size: 13.5px; color: var(--ink-soft); line-height: 1.75; }
+        .step-icon { font-size: 1.6rem; margin-bottom: 18px; }
+        .step-card h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+        .step-card p  { font-size: 13.5px; color: var(--grey); line-height: 1.75; }
 
-        /* ── WHY ── */
-        .why-section { background: var(--white); }
-        .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+        /* ── WHY SECTION ── */
+        .why-section { background: var(--black2); }
+        .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
         .why-card {
-            background: var(--off-white); border: 1px solid var(--border);
-            border-radius: 14px; padding: 32px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            background: var(--card-bg);
+            border: 1px solid var(--border2);
+            border-radius: 12px; padding: 28px;
+            transition: border-color 0.2s, transform 0.2s;
         }
-        .why-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(1,33,105,0.08); }
-        .why-icon {
-            width: 46px; height: 46px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.3rem; margin-bottom: 18px;
+        .why-card:hover { border-color: var(--border); transform: translateY(-2px); }
+        .why-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem; color: var(--purple); letter-spacing: 0.1em;
+            margin-bottom: 14px; display: block;
         }
-        .wi-navy { background: var(--navy-light); }
-        .wi-red  { background: var(--red-light); }
-        .why-card h3 { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-        .why-card p  { font-size: 13.5px; color: var(--ink-soft); line-height: 1.75; }
+        .why-card h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+        .why-card p  { font-size: 13px; color: var(--grey); line-height: 1.75; }
 
         /* ── COMPLIANCE ── */
         .compliance-section {
-            background: var(--red);
-            padding: 72px 24px; text-align: center;
+            background: var(--black);
+            padding: 80px 24px;
+            text-align: center; position: relative; z-index: 1;
+            border-top: 1px solid var(--border2);
+            border-bottom: 1px solid var(--border2);
         }
         .compliance-section h2 {
-            font-size: clamp(1.5rem, 3.5vw, 2.3rem);
-            font-weight: 800; color: var(--white);
-            letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.2;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: var(--white); margin-bottom: 14px; letter-spacing: 0.02em;
         }
-        .compliance-section p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto; line-height: 1.75; }
+        .compliance-section p { font-size: 1rem; color: var(--grey); max-width: 500px; margin: 0 auto; line-height: 1.75; }
         .compliance-tags { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
         .c-tag {
-            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
-            color: var(--white); font-size: 12px; font-weight: 600;
+            background: rgba(123,47,255,0.1);
+            border: 1px solid var(--border);
+            color: var(--purple3); font-size: 12px; font-weight: 600;
             padding: 6px 16px; border-radius: 100px;
         }
 
         /* ── WAITLIST ── */
-        .waitlist-section { background: var(--off-white); padding: 96px 24px; }
+        .waitlist-section { background: var(--black2); padding: 100px 24px; position: relative; z-index: 1; }
+        .waitlist-glow {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 600px; height: 300px;
+            background: radial-gradient(ellipse, rgba(123,47,255,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
         .waitlist-box {
             max-width: 480px; margin: 0 auto;
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 18px; padding: 48px;
-            box-shadow: 0 8px 40px rgba(1,33,105,0.08);
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px; padding: 48px;
+            box-shadow: 0 0 60px rgba(123,47,255,0.1);
+            position: relative; z-index: 1;
         }
         .waitlist-box h2 {
-            font-size: 1.75rem; font-weight: 800;
-            color: var(--ink); letter-spacing: -0.025em; margin-bottom: 6px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem; color: var(--white);
+            letter-spacing: 0.03em; margin-bottom: 6px;
         }
-        .waitlist-box > p { font-size: 14px; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.65; }
+        .waitlist-box > p { font-size: 14px; color: var(--grey); margin-bottom: 28px; line-height: 1.65; }
         .role-toggle {
-            display: flex; background: var(--off-white);
+            display: flex; background: var(--black);
             border-radius: 8px; padding: 4px; margin-bottom: 24px;
+            border: 1px solid var(--border2);
         }
         .role-toggle input[type="radio"] { display: none; }
         .role-toggle label {
             flex: 1; text-align: center; padding: 9px;
             border-radius: 6px; font-size: 13px; font-weight: 600;
-            color: var(--ink-soft); cursor: pointer;
-            transition: var(--transition); margin: 0; display: block;
+            color: var(--grey); cursor: pointer;
+            transition: all 0.2s; margin: 0; display: block;
         }
         .role-toggle input[type="radio"]:checked + label {
-            background: var(--white); color: var(--navy);
-            box-shadow: 0 1px 6px rgba(1,33,105,0.12);
+            background: var(--purple); color: var(--white);
+            box-shadow: 0 0 12px var(--glow);
         }
         .form-field { margin-bottom: 16px; }
-        .form-field label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+        .form-field label { display: block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
         .form-field input {
             width: 100%; padding: 11px 14px;
-            border: 1.5px solid var(--border); border-radius: 8px;
-            font-family: 'Inter', sans-serif; font-size: 14px;
-            color: var(--ink); outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            background: var(--black); border: 1px solid var(--border2);
+            border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+            color: var(--white); outline: none; transition: border-color 0.2s, box-shadow 0.2s;
         }
-        .form-field input:focus {
-            border-color: var(--navy);
-            box-shadow: 0 0 0 3px rgba(1,33,105,0.1);
-        }
+        .form-field input::placeholder { color: rgba(160,160,184,0.4); }
+        .form-field input:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(123,47,255,0.15); }
+        .hidden { display: none; }
         .submit-btn {
             width: 100%; padding: 14px; margin-top: 8px;
-            background: var(--navy); color: var(--white);
+            background: var(--purple); color: var(--white);
             border: none; border-radius: 8px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             font-size: 15px; font-weight: 600; cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.2s;
+            box-shadow: 0 0 20px var(--glow);
         }
-        .submit-btn:hover:not(:disabled) {
-            background: var(--navy-mid); transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(1,33,105,0.28);
-        }
-        .submit-btn:disabled { background: #9ca3af; cursor: not-allowed; transform: none; box-shadow: none; }
-        .form-note { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 12px; }
+        .submit-btn:hover:not(:disabled) { background: var(--purple2); transform: translateY(-1px); box-shadow: 0 0 32px var(--glow); }
+        .submit-btn:disabled { background: #333; box-shadow: none; cursor: not-allowed; }
+        .form-note { text-align: center; font-size: 12px; color: rgba(160,160,184,0.5); margin-top: 12px; }
         #thank-you { text-align: center; padding: 16px 0; }
         #thank-you .ty-emoji { font-size: 2.8rem; margin-bottom: 14px; }
-        #thank-you h3 { font-size: 1.4rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
-        #thank-you p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+        #thank-you h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--purple); letter-spacing: 0.03em; margin-bottom: 8px; }
+        #thank-you p { font-size: 14px; color: var(--grey); line-height: 1.65; }
 
         /* ── FOOTER ── */
-        footer { background: var(--navy-dark); padding: 40px 24px; }
-        .footer-inner {
-            max-width: 1080px; margin: 0 auto;
-            display: flex; justify-content: space-between;
-            align-items: center; flex-wrap: wrap; gap: 16px;
-        }
-        .footer-logo { font-size: 1.1rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; text-decoration: none; }
-        .footer-logo span { color: #fca5a5; }
-        footer p { font-size: 13px; color: rgba(255,255,255,0.35); }
+        footer { background: var(--black); border-top: 1px solid var(--border2); padding: 40px 24px; position: relative; z-index: 1; }
+        .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.04em; color: var(--white); text-decoration: none; }
+        .footer-logo span { color: var(--purple); }
+        footer p { font-size: 13px; color: rgba(160,160,184,0.4); }
         .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.15s; }
+        .footer-links a { font-size: 13px; color: rgba(160,160,184,0.4); text-decoration: none; transition: color 0.15s; }
         .footer-links a:hover { color: var(--white); }
 
-        /* ── SCROLL REVEAL ── */
-        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        /* ── REVEAL ── */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* ── MOBILE ── */
@@ -378,175 +402,167 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
-    <a class="logo" href="#">Brand<span>valley</span></a>
+    <a class="logo" href="#">HYPE<span>NEX</span></a>
     <div class="nav-right">
         <a href="#how" class="btn btn-ghost">How it works</a>
-        <a href="#waitlist" class="btn btn-primary" onclick="setRole('brand')">Get early access</a>
+        <a href="#waitlist" class="btn btn-purple" onclick="setRole('brand')">Get early access</a>
     </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
     <div class="hero-badge">
         <span class="live-dot"></span>
-        Now accepting early access — UK only
+        Early access open — UK only
     </div>
-    <h1>
-        The smarter way to run<br>
-        <span class="accent-red">influencer marketing</span><br>
-        <span class="accent-blue">in the UK</span>
-    </h1>
+    <h1>THE HUB<br>WHERE <span class="hn">HYPE</span><br>IS BORN</h1>
+    <p class="hero-tagline">Brands connect. Creators earn. Views pay.</p>
     <p class="hero-sub">
-        Brands pay per 1,000 views — not per post, not per follower count. Creators earn every time someone watches. No flat fees. No guesswork. No wasted budget.
+        The UK's first performance-only UGC marketplace. Brands pay per 1,000 views — not per post, not per follower. No flat fees. No wasted budget.
     </p>
     <div class="hero-ctas">
-        <a href="#waitlist" class="btn btn-primary" style="font-size:15px;padding:13px 28px;" onclick="setRole('brand')">Join as a Brand</a>
-        <a href="#waitlist" class="btn btn-red" style="font-size:15px;padding:13px 28px;" onclick="setRole('creator')">Join as a Creator</a>
+        <a href="#waitlist" class="btn btn-purple" onclick="setRole('brand')">Join as a Brand</a>
+        <a href="#waitlist" class="btn btn-ghost" onclick="setRole('creator')">Join as a Creator</a>
     </div>
     <div class="platform-row">
-        <p>Works on</p>
+        <p>Live on</p>
         <div class="platform-pill"><span class="pdot pdot-tt"></span>TikTok</div>
         <div class="platform-pill"><span class="pdot pdot-ig"></span>Instagram Reels</div>
         <div class="platform-pill"><span class="pdot pdot-yt"></span>YouTube Shorts</div>
     </div>
 </header>
 
-<!-- STATS -->
 <div class="stats-bar">
     <div class="stats-grid">
         <div><div class="stat-val">£0</div><div class="stat-lbl">Upfront brand spend</div></div>
         <div><div class="stat-val">CPM</div><div class="stat-lbl">Pay per 1,000 real views</div></div>
         <div><div class="stat-val">100%</div><div class="stat-lbl">ASA compliant by default</div></div>
-        <div><div class="stat-val">3×</div><div class="stat-lbl">Platforms in one place</div></div>
+        <div><div class="stat-val">3×</div><div class="stat-lbl">Platforms in one dashboard</div></div>
     </div>
 </div>
 
-<!-- PROBLEM -->
 <section class="problem-section">
     <div class="container">
-        <span class="section-tag tag-red">The problem we're solving</span>
-        <h2 class="section-title">Influencer marketing is broken<br>for everyone</h2>
-        <p class="section-sub">Brands spend thousands on posts that flop. Creators spend hours negotiating deals that go nowhere. There's a better way — and it's already working in the US.</p>
+        <span class="section-tag">The problem we're fixing</span>
+        <h2 class="section-title">Influencer marketing<br>is broken for everyone</h2>
+        <p class="section-sub">Brands spend thousands on posts that flop. Creators spend hours negotiating deals that go nowhere. HypeNex fixes both sides at once.</p>
         <div class="problem-grid">
             <div class="prob-card reveal">
-                <span class="prob-tag prob-tag-red">For Brands</span>
+                <span class="prob-tag tag-purple">For brands</span>
                 <h3>You're paying for promises, not results</h3>
-                <p>Traditional influencer marketing charges per post or per follower. A creator with 100k followers might get 200 views. You've already paid. There's no refund.</p>
+                <p>Traditional influencer marketing charges per post or per follower. A creator with 100k followers might get 200 views on your product. You've already paid. There's no refund.</p>
             </div>
             <div class="prob-card reveal">
-                <span class="prob-tag prob-tag-blue">For Creators</span>
+                <span class="prob-tag tag-grey">For creators</span>
                 <h3>You're undervalued unless you're already famous</h3>
-                <p>Without a huge following, brands won't talk to you. You spend more time pitching than creating. When you land a deal, negotiating fair pay is exhausting.</p>
+                <p>Without a huge following, brands won't talk to you. You spend more time pitching than creating. When you do land a deal, negotiating fair pay is exhausting.</p>
             </div>
             <div class="prob-card reveal">
-                <span class="prob-tag prob-tag-red">The old model</span>
+                <span class="prob-tag tag-purple">The old model</span>
                 <h3>Agencies take 30–50%. ROI is unmeasured.</h3>
-                <p>You have no idea if your £5,000 campaign generated £500 or £50,000 in value. Performance is unmeasured. Accountability is non-existent.</p>
+                <p>You have no idea if your £5,000 campaign generated £500 or £50,000 in value. Performance is never measured. Accountability doesn't exist.</p>
             </div>
             <div class="prob-card reveal">
-                <span class="prob-tag prob-tag-blue">For micro-creators</span>
-                <h3>Great content. No path to income.</h3>
-                <p>You make content people love. But without a massive following, there's no clear way to monetise it. TikTok's creator fund barely covers coffee.</p>
+                <span class="prob-tag tag-grey">For micro-creators</span>
+                <h3>Great content. No clear path to income.</h3>
+                <p>You make content people love. But without a massive following, there's no way to monetise it. TikTok's creator fund barely covers coffee. Brand deals feel out of reach.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="how-section" id="how">
     <div class="container">
-        <span class="section-tag tag-navy">How it works</span>
+        <span class="section-tag">How it works</span>
         <h2 class="section-title">Simple for both sides</h2>
-        <p class="section-sub">Brandvalley connects brands who need content with creators who make it — and everyone only wins when real views happen.</p>
+        <p class="section-sub">HypeNex connects brands who need content with creators who make it — and everyone only wins when real views happen.</p>
         <div class="how-toggle">
-            <button class="how-toggle-btn active" onclick="switchHow('brand', this)">For Brands</button>
-            <button class="how-toggle-btn" onclick="switchHow('creator', this)">For Creators</button>
+            <button class="how-tab active" onclick="switchHow('brand',this)">For Brands</button>
+            <button class="how-tab" onclick="switchHow('creator',this)">For Creators</button>
         </div>
         <div class="how-steps active" id="how-brand">
             <div class="step-card reveal" data-num="1">
                 <div class="step-icon">📋</div>
                 <h3>Post a bounty</h3>
-                <p>List your product and set a CPM — the price you pay per 1,000 verified views. You control your budget entirely. No hidden fees, no minimums.</p>
+                <p>Set your CPM — the price you pay per 1,000 verified views. You control every penny. No hidden fees, no minimums, no surprises.</p>
             </div>
             <div class="step-card reveal" data-num="2">
                 <div class="step-icon">🎬</div>
                 <h3>Creators make content</h3>
-                <p>Real UK creators browse your bounty, get your product, and film authentic videos. No briefing calls. No agency in the middle. No upfront cost.</p>
+                <p>Real UK creators browse your bounty, get your product, and film authentic videos. No briefing calls. No agency in the middle.</p>
             </div>
             <div class="step-card reveal" data-num="3">
                 <div class="step-icon">📊</div>
                 <h3>Pay only for verified views</h3>
-                <p>Your budget unlocks only when views are tracked and verified across TikTok, Instagram Reels, and YouTube Shorts. Zero risk, total transparency.</p>
+                <p>Your budget unlocks only when views are tracked and verified across TikTok, Instagram Reels, and YouTube Shorts. Zero upfront risk.</p>
             </div>
         </div>
         <div class="how-steps" id="how-creator">
             <div class="step-card reveal" data-num="1">
                 <div class="step-icon">🔍</div>
-                <h3>Browse brand bounties</h3>
-                <p>Find products you genuinely like. No follower minimum, no pitching, no media kit needed. If you make good content, you qualify — full stop.</p>
+                <h3>Browse bounties</h3>
+                <p>Find brands you genuinely like. No follower minimum, no pitching, no media kit. If you make good content, you qualify.</p>
             </div>
             <div class="step-card reveal" data-num="2">
                 <div class="step-icon">📱</div>
                 <h3>Create and post</h3>
-                <p>Film your video, post it to TikTok, Instagram Reels, or YouTube Shorts. Submit your tracking link through Brandvalley. That's it.</p>
+                <p>Film your video, post it to TikTok, Instagram Reels, or YouTube Shorts. Submit your link through HypeNex. Done.</p>
             </div>
             <div class="step-card reveal" data-num="3">
                 <div class="step-icon">💷</div>
                 <h3>Earn as views roll in</h3>
-                <p>Your earnings grow in real-time as your content gets watched. The better it performs, the more you make. No negotiations. No waiting. Ever.</p>
+                <p>Your earnings grow in real-time as your content gets watched. The better it performs, the more you make. No negotiations. Ever.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- WHY -->
 <section class="why-section">
     <div class="container">
-        <span class="section-tag tag-navy">Why Brandvalley</span>
-        <h2 class="section-title">Built differently.<br>For a reason.</h2>
-        <p class="section-sub">Every decision is designed to fix something broken about the current system.</p>
+        <span class="section-tag">Why HypeNex</span>
+        <h2 class="section-title">Built differently.<br>On purpose.</h2>
+        <p class="section-sub">Every decision we made is designed to fix something broken about the current system.</p>
         <div class="why-grid">
             <div class="why-card reveal">
-                <div class="why-icon wi-navy">💰</div>
+                <span class="why-num">01 —</span>
                 <h3>Performance-only pricing</h3>
-                <p>No upfront fees. No flat rates. Brands pay CPM only when content is watched. Everyone's incentives point the same direction.</p>
+                <p>No flat fees. No follower minimums. You pay CPM only when content is watched. Everyone's incentives point the same direction.</p>
             </div>
             <div class="why-card reveal">
-                <div class="why-icon wi-red">⚖️</div>
+                <span class="why-num">02 —</span>
                 <h3>ASA-compliant by default</h3>
-                <p>UK law requires disclosure on all paid content. We auto-check every post for #ad compliance before it goes live — brands carry zero legal risk.</p>
+                <p>UK law requires disclosure on all paid content. We auto-check every post for #ad compliance before it goes live.</p>
             </div>
             <div class="why-card reveal">
-                <div class="why-icon wi-navy">🌍</div>
+                <span class="why-num">03 —</span>
                 <h3>Multi-platform tracking</h3>
-                <p>TikTok, Instagram Reels, YouTube Shorts — all tracked in one dashboard. No single-platform dependency, no API risk.</p>
+                <p>TikTok, Instagram Reels, YouTube Shorts — all tracked in one dashboard. No single-platform dependency.</p>
             </div>
             <div class="why-card reveal">
-                <div class="why-icon wi-red">🇬🇧</div>
+                <span class="why-num">04 —</span>
                 <h3>Built for the UK</h3>
-                <p>US platforms don't understand UK regulation, UK creators, or UK payment infrastructure. We do. This is built here, for here.</p>
+                <p>US platforms don't understand UK regulation, UK creators, or UK payment infrastructure. We do. Built here, for here.</p>
             </div>
             <div class="why-card reveal">
-                <div class="why-icon wi-navy">⚡</div>
+                <span class="why-num">05 —</span>
                 <h3>No gatekeeping</h3>
-                <p>Any creator who makes good content can earn. Any brand with a product can run a campaign. We've removed every barrier that makes influencer marketing slow and expensive.</p>
+                <p>Any creator who makes good content can earn. Any brand with a product can run a campaign. Zero barriers.</p>
             </div>
             <div class="why-card reveal">
-                <div class="why-icon wi-red">📈</div>
+                <span class="why-num">06 —</span>
                 <h3>Content you can reuse</h3>
-                <p>Every video comes with usage rights. Run the best-performing content as paid ads. Your UGC library grows automatically with every campaign.</p>
+                <p>Every video comes with usage rights. Run the best-performing content as paid ads. Your UGC library builds itself.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- COMPLIANCE -->
 <div class="compliance-section">
     <div class="container">
         <h2>The UK has strict rules.<br>We make compliance effortless.</h2>
-        <p>The ASA and CMA require clear sponsorship disclosure on all paid and gifted content. Non-compliance means public takedown orders and fines. Brandvalley checks every post automatically — before it goes live.</p>
+        <p>The ASA and CMA require clear sponsorship disclosure on all paid and gifted content. HypeNex auto-checks every post before it goes live — so your brand is always protected.</p>
         <div class="compliance-tags">
             <span class="c-tag">✓ ASA compliant</span>
             <span class="c-tag">✓ CMA guidelines</span>
@@ -556,11 +572,11 @@
     </div>
 </div>
 
-<!-- WAITLIST -->
 <section class="waitlist-section" id="waitlist">
+    <div class="waitlist-glow"></div>
     <div class="waitlist-box">
-        <h2>Get early access</h2>
-        <p>We're launching with a select group of UK brands and creators. Join the waitlist and we'll be in touch personally.</p>
+        <h2>GET EARLY ACCESS</h2>
+        <p>We're launching with a select group of UK brands and creators. Join now and we'll be in touch personally.</p>
         <form id="signup-form">
             <div class="role-toggle">
                 <input type="radio" name="role" id="role-brand" value="brand" checked onchange="toggleCompany(true)">
@@ -584,40 +600,36 @@
             <p class="form-note">No spam. We'll only reach out about early access.</p>
         </form>
         <div id="thank-you" class="hidden">
-            <div class="ty-emoji">🎉</div>
-            <h3>You're on the list!</h3>
-            <p>Thanks for joining Brandvalley. We'll be in touch with early access details very soon.</p>
+            <div class="ty-emoji">🔥</div>
+            <h3>YOU'RE IN.</h3>
+            <p>Welcome to HypeNex. We'll be in touch with early access details very soon.</p>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="footer-inner">
-        <a class="footer-logo" href="#">Brand<span>valley</span></a>
-        <p>© 2026 Brandvalley · Built in the UK</p>
+        <a class="footer-logo" href="#">HYPE<span>NEX</span></a>
+        <p>© 2026 HypeNex · Built in the UK</p>
         <div class="footer-links">
-            <a href="mailto:hello@brandvalley.co.uk">hello@brandvalley.co.uk</a>
+            <a href="mailto:hello@hypenex.co.uk">hello@hypenex.co.uk</a>
             <a href="#">Privacy</a>
         </div>
     </div>
 </footer>
 
 <script>
-    // Nav scroll
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // How it works toggle
     function switchHow(role, btn) {
-        document.querySelectorAll('.how-toggle-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.how-tab').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.how-steps').forEach(s => s.classList.remove('active'));
         btn.classList.add('active');
         document.getElementById('how-' + role).classList.add('active');
     }
 
-    // Company field
     function toggleCompany(show) {
         const field = document.getElementById('company-field');
         const input = document.getElementById('company');
@@ -625,19 +637,16 @@
         else       { field.classList.add('hidden');    input.removeAttribute('required'); }
     }
 
-    // Role from nav/hero CTAs
     function setRole(role) {
         const r = document.getElementById('role-' + role);
         if (r) { r.checked = true; toggleCompany(role === 'brand'); }
     }
 
-    // Scroll reveal
     const observer = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Form submit
     document.getElementById('signup-form').addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = document.getElementById('submit-btn');
