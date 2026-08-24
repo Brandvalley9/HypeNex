@@ -3,52 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hypenex - Creator Marketplace</title>
+  <title>HypeNex — Creator Marketplace</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hn-black': '#08080d',
+            'hn-black2': '#0f0f18',
+            'hn-card': '#13131f',
+            'hn-purple': '#7b2fff',
+            'hn-purple2': '#9d5fff',
+            'hn-purple3': '#c49dff',
+            'hn-grey': '#a0a0b8',
+            'hn-border': 'rgba(255,255,255,0.07)',
+            'hn-glow': 'rgba(123,47,255,0.35)',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            bebas: ['Bebas Neue', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: var(--hn-black, #08080d); color: white; -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: -1; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; }
+    .neon-shadow { box-shadow: 0 0 18px rgba(123,47,255,0.35); }
+    .neon-shadow:hover { box-shadow: 0 0 28px rgba(123,47,255,0.5); }
+  </style>
 </head>
-<body class="bg-slate-50 font-['Inter']">
+<body class="bg-hn-black font-sans relative min-h-screen">
 
   <!-- Header / Navigation -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+  <header class="bg-hn-black/90 backdrop-blur-lg border-b border-hn-border sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold text-slate-900 tracking-tight">HypeNex</a>
-      <div class="flex items-center gap-6 text-sm font-medium">
-        <a href="index.html" class="text-slate-600 hover:text-slate-900">Home</a>
-        <a href="marketplace.html" class="text-indigo-600 font-semibold">Marketplace</a>
-        <a href="signup.html" class="bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition">Sign Up</a>
+      <a href="index.html" class="font-bebas text-2xl tracking-wide text-white decoration-none">HYPE<span class="text-hn-purple">NEX</span></a>
+      <div class="flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="text-hn-grey hover:text-white transition">Home</a>
+        <a href="marketplace.html" class="text-hn-purple3">Marketplace</a>
+        <a href="index.html#waitlist" class="bg-transparent border border-hn-border text-white px-4 py-2 rounded-md hover:border-hn-purple hover:text-hn-purple transition">Dashboard</a>
       </div>
     </div>
   </header>
 
   <!-- Marketplace Catalog Header -->
-  <section class="max-w-7xl mx-auto px-6 pt-10 pb-6">
-    <h1 class="text-3xl font-bold text-slate-900 mb-2">Creator Campaigns</h1>
-    <p class="text-slate-600">Discover active brand opportunities and apply in seconds.</p>
+  <section class="max-w-7xl mx-auto px-6 pt-12 pb-8 text-center md:text-left">
+    <div class="inline-flex items-center gap-2 bg-hn-purple/10 border border-hn-purple/30 text-hn-purple3 text-xs font-bold px-4 py-1.5 rounded-full mb-4">
+      <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+      Zero Follower Gate: Open to all creators. Payout based purely on performance.
+    </div>
+    <h1 class="font-bebas text-4xl md:text-5xl text-white tracking-wide mb-2">Regulated Finance Campaigns</h1>
+    <p class="text-hn-grey text-sm md:text-base max-w-2xl">Discover active FCA-compliant brand opportunities. Run your scripts through our Cognitive Compliance AI, post safely, and earn per verified conversion.</p>
   </section>
 
   <!-- Campaign Grid -->
   <main class="max-w-7xl mx-auto px-6 pb-20">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Campaign Card 1 -->
-<!-- HypeNex Brand Campaign Card -->
-<a href="campaign-detail.html" class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-md transition group">
-  <div class="relative w-full h-48 overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="HypeNex Velocity Sneaker">
-    <div class="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-white font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md border border-white/20">
-      HypeNex Edition
+      <!-- HypeNex Brand Campaign Card (Moneybag) -->
+      <a href="campaign-detail.html" class="bg-hn-card rounded-xl border border-hn-border overflow-hidden hover:border-hn-purple/50 hover:-translate-y-1 transition-all duration-300 group block relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-hn-card/90 z-10 pointer-events-none"></div>
+        <div class="relative w-full h-48 overflow-hidden">
+          <!-- Finance / Wealth Image -->
+          <img src="https://images.unsplash.com/photo-1616803140344-6682afb13cda?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Finance App">
+          
+          <!-- Compliance Badge -->
+          <div class="absolute top-3 left-3 z-20 bg-green-500/20 backdrop-blur-md text-green-400 font-bold text-[10px] tracking-wider uppercase px-2.5 py-1 rounded border border-green-500/30 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+            FCA & ASA Compliant Brief
+          </div>
+        </div>
+        
+        <div class="p-6 relative z-20 bg-hn-card">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="font-bold text-white text-lg leading-tight group-hover:text-hn-purple transition-colors">Moneybag — The £1,000 LISA Gov Bonus Challenge</h3>
+            <div class="w-8 h-8 rounded bg-hn-black border border-hn-border text-white font-bebas flex items-center justify-center text-sm shrink-0 ml-3">MB</div>
+          </div>
+          
+          <p class="text-sm text-hn-grey mb-5 line-clamp-2">Targeting graduates & first-time buyers. Expose the "legal property loophole" and drive LISA account openings.</p>
+          
+          <div class="flex justify-between items-end pt-4 border-t border-hn-border border-dashed">
+            <div class="flex flex-col">
+              <span class="text-xs text-hn-grey font-medium mb-1">Performance Payout</span>
+              <span class="text-hn-purple3 font-bold text-sm">£10 CPM <span class="text-hn-grey text-xs font-normal">+</span> £15 CPA</span>
+            </div>
+            <span class="bg-hn-black text-hn-grey text-xs font-semibold px-2.5 py-1 rounded-md border border-hn-border">
+              TikTok / YT Shorts
+            </span>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Placeholder for more campaigns to show scaling -->
+      <div class="bg-hn-card/50 rounded-xl border border-hn-border border-dashed flex flex-col items-center justify-center p-8 text-center">
+        <div class="w-12 h-12 rounded-full bg-hn-black border border-hn-border flex items-center justify-center mb-3">
+          <svg class="w-5 h-5 text-hn-grey" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+        </div>
+        <h3 class="text-white font-semibold text-sm mb-1">New Briefs Loading</h3>
+        <p class="text-hn-grey text-xs">Our AI is actively screening incoming campaigns from 14 challenger banks.</p>
+      </div>
+
     </div>
-  </div>
-  <div class="p-6">
-    <div class="flex justify-between items-start mb-3">
-      <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">HypeNex Velocity '26 Series</h3>
-      <div class="w-8 h-8 rounded-lg bg-slate-900 text-white font-bold flex items-center justify-center text-xs border">HN</div>
-    </div>
-    <p class="text-sm text-slate-600 mb-4 line-clamp-2">Showcase authentic daily movement and lifestyle integration with the official HypeNex Velocity sneaker line.</p>
-    <div class="flex justify-between items-center text-xs font-semibold pt-3 border-t border-slate-100">
-      <span class="text-amber-600 font-bold">£1,250 + Free Sneakers</span>
-      <span class="text-slate-500">TikTok / IG</span>
-    </div>
-  </div>
-</a>
+  </main>
+</body>
+</html>
