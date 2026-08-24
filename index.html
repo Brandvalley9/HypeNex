@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HypeNex — The Hub Where Hype Is Born</title>
-    <meta name="description" content="Brands pay per view. Creators earn per view. The UK's first performance UGC marketplace.">
-    <meta property="og:title" content="HypeNex — The hub where hype is born">
-    <meta property="og:description" content="Brands pay per view. Creators earn per view.">
+    <title>HypeNex — The Creator Engine Built for Regulated Finance</title>
+    <meta name="description" content="Automated FCA Consumer Duty guardrails meet pure pay-for-performance. Unlocking regulated finance for the creator generation.">
+    <meta property="og:title" content="HypeNex — The Creator Engine Built for Regulated Finance">
+    <meta property="og:description" content="Turn raw Gen-Z creators into verified, compliant brand advocates.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,80 +45,105 @@
         .btn-purple:hover { background: var(--purple2); transform: translateY(-1px); box-shadow: 0 0 28px var(--glow); }
 
         /* HERO */
-        .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 140px 24px 100px; position: relative; overflow: hidden; width: 100%; }
+        .hero { min-height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 140px 24px 60px; position: relative; overflow: hidden; width: 100%; }
         .hero-glow { position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 700px; height: 400px; background: radial-gradient(ellipse, rgba(123,47,255,0.18) 0%, transparent 70%); pointer-events: none; max-width: 100%; }
         .hero-grid { position: absolute; inset: 0; width: 100%; background-image: linear-gradient(rgba(123,47,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(123,47,255,0.05) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 100%); }
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(123,47,255,0.12); border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px 6px 8px; font-size: 12px; font-weight: 600; color: var(--purple3); margin-bottom: 32px; animation: fadeUp 0.5s ease both; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: 100px; padding: 6px 16px 6px 8px; font-size: 12px; font-weight: 600; color: #4ade80; margin-bottom: 32px; animation: fadeUp 0.5s ease both; }
         .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 3px rgba(34,197,94,0.2); animation: pulse 2s infinite; flex-shrink: 0; }
         @keyframes pulse { 0%,100%{box-shadow:0 0 0 3px rgba(34,197,94,0.2)} 50%{box-shadow:0 0 0 7px rgba(34,197,94,0.07)} }
-        .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 10vw, 8rem); line-height: 0.95; letter-spacing: 0.02em; color: var(--white); margin-bottom: 20px; animation: fadeUp 0.5s 0.08s ease both; }
+        
+        .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.95; letter-spacing: 0.02em; color: var(--white); margin-bottom: 24px; animation: fadeUp 0.5s 0.08s ease both; text-transform: uppercase; }
         .hero h1 .hn { color: var(--purple); text-shadow: 0 0 40px var(--glow); }
-        .hero-sub { font-size: clamp(1rem, 2.5vw, 1.2rem); color: var(--grey); max-width: 480px; line-height: 1.7; margin-bottom: 44px; animation: fadeUp 0.5s 0.16s ease both; }
-        .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.5s 0.24s ease both; }
-        .hero-ctas .btn { font-size: 15px; padding: 13px 30px; }
-        .platform-row { margin-top: 52px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.5s 0.32s ease both; }
-        .platform-row p { font-size: 12px; color: rgba(160,160,184,0.5); font-weight: 500; }
-        .platform-pill { display: flex; align-items: center; gap: 7px; background: var(--card-bg); border: 1px solid var(--border2); border-radius: 100px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--grey); }
-        .pdot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-        .pdot-tt { background: #fff; } .pdot-ig { background: #e1306c; } .pdot-yt { background: #ff0000; }
+        .hero-sub { font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--grey); max-width: 600px; line-height: 1.6; margin-bottom: 44px; animation: fadeUp 0.5s 0.16s ease both; }
+        .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.5s 0.24s ease both; }
+        .hero-ctas .btn { font-size: 15px; padding: 14px 32px; }
+
         @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
+        /* TRUST BANNER MARQUEE */
+        .trust-banner { background: var(--black2); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2); padding: 16px 0; overflow: hidden; display: flex; white-space: nowrap; position: relative; z-index: 2; width: 100%; }
+        .marquee-inner { display: flex; gap: 48px; animation: marquee 25s linear infinite; padding-left: 48px; }
+        .marquee-item { font-size: 12px; font-weight: 700; color: rgba(160,160,184,0.6); text-transform: uppercase; letter-spacing: 0.12em; display: flex; align-items: center; gap: 8px; }
+        .marquee-item.highlight { color: #4ade80; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* INTERACTIVE AI VISUALIZER */
+        .visualizer-section { padding: 80px 24px; background: var(--black); position: relative; z-index: 1; text-align: center; }
+        .vis-container { max-width: 700px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border2); border-radius: 12px; padding: 24px; text-align: left; position: relative; overflow: hidden; font-family: 'Courier New', Courier, monospace; font-size: 14px; line-height: 1.7; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .scan-line { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--purple); box-shadow: 0 0 15px var(--purple); animation: scan 6s infinite linear; z-index: 10; opacity: 0.6; pointer-events: none; }
+        @keyframes scan { 0% { top: -10%; } 100% { top: 110%; } }
+        .vis-header { display: flex; justify-content: space-between; color: var(--grey); font-size: 11px; margin-bottom: 20px; border-bottom: 1px solid var(--border2); padding-bottom: 12px; font-family: 'DM Sans', sans-serif; font-weight: 600; letter-spacing: 0.05em; }
+        .vis-error { position: relative; color: #ef4444; background: rgba(239,68,68,0.1); padding: 0 4px; border-radius: 4px; border: 1px solid rgba(239,68,68,0.3); animation: hideError 8s infinite; }
+        .vis-error::after { content: '⚠️ FCA FG24/1 VIOLATION'; position: absolute; bottom: 100%; left: 0; font-size: 10px; color: #ef4444; white-space: nowrap; font-family: 'DM Sans', sans-serif; font-weight: bold; background: #2a0a0a; padding: 2px 6px; border-radius: 4px; border: 1px solid #ef4444; }
+        .vis-correction { color: #22c55e; background: rgba(34,197,94,0.1); padding: 0 4px; border-radius: 4px; border: 1px solid rgba(34,197,94,0.3); animation: showCorrection 8s infinite; display: inline-block; opacity: 0; font-weight: bold; }
+        @keyframes hideError { 0%, 35% { text-decoration: none; opacity: 1; } 40%, 100% { text-decoration: line-through; opacity: 0.3; } }
+        @keyframes showCorrection { 0%, 39% { display: none; opacity: 0; } 40%, 100% { display: inline-block; opacity: 1; } }
+        .anim-status::before { content: ''; animation: statusChange 8s infinite; font-weight: bold; }
+        @keyframes statusChange { 
+            0%, 35% { content: 'ANALYZING AGAINST FCA FG24/1 & s21 FSMA...'; color: #eab308; } 
+            40%, 90% { content: 'VIOLATION BLOCKED. COMPLIANT ALTERNATIVE APPLIED.'; color: #22c55e; } 
+            95%, 100% { content: 'ANALYZING AGAINST FCA FG24/1 & s21 FSMA...'; color: #eab308; } 
+        }
+
         /* STATS */
-        .stats-bar { background: var(--card-bg); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2); padding: 36px 24px; position: relative; z-index: 1; width: 100%; }
-        .stats-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; text-align: center; }
-        .stat-val { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--purple); letter-spacing: 0.03em; text-shadow: 0 0 20px var(--glow); }
-        .stat-lbl { font-size: 12px; color: var(--grey); font-weight: 500; margin-top: 4px; }
+        .stats-bar { background: var(--black2); padding: 60px 24px; position: relative; z-index: 1; width: 100%; }
+        .stats-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; text-align: center; }
+        .stat-val { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--purple); letter-spacing: 0.03em; text-shadow: 0 0 20px var(--glow); line-height: 1; }
+        .stat-lbl { font-size: 13px; color: var(--grey); font-weight: 500; margin-top: 8px; }
 
         /* HOW IT WORKS */
-        .how-section { padding: 100px 0; position: relative; z-index: 1; background: var(--black2); width: 100%; }
-        .section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--purple); display: block; margin-bottom: 14px; }
-        .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.0; letter-spacing: 0.02em; color: var(--white); margin-bottom: 48px; }
-        .how-toggle { display: inline-flex; border: 1px solid var(--border2); border-radius: 8px; overflow: hidden; margin-bottom: 40px; }
-        .how-tab { padding: 9px 28px; font-size: 13px; font-weight: 600; background: transparent; color: var(--grey); border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+        .how-section { padding: 100px 0; position: relative; z-index: 1; background: var(--black); width: 100%; }
+        .section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--purple); display: block; margin-bottom: 14px; text-align: center; }
+        .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.0; letter-spacing: 0.02em; color: var(--white); margin-bottom: 48px; text-align: center; }
+        .how-toggle { display: flex; justify-content: center; border: 1px solid var(--border2); border-radius: 8px; overflow: hidden; margin: 0 auto 40px; width: fit-content; }
+        .how-tab { padding: 10px 32px; font-size: 13px; font-weight: 600; background: transparent; color: var(--grey); border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
         .how-tab:first-child { border-right: 1px solid var(--border2); }
         .how-tab.active { background: var(--purple); color: var(--white); }
         .how-steps { display: none; }
         .how-steps.active { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
         .step-card { background: var(--card-bg); border: 1px solid var(--border2); border-radius: 12px; padding: 32px; position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
         .step-card:hover { border-color: var(--border); transform: translateY(-3px); }
-        .step-card::before { content: attr(data-num); position: absolute; top: -12px; right: 12px; font-family: 'Bebas Neue', sans-serif; font-size: 6rem; color: rgba(123,47,255,0.07); line-height: 1; pointer-events: none; }
         .step-icon { font-size: 1.6rem; margin-bottom: 16px; }
-        .step-card h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
-        .step-card p { font-size: 13px; color: var(--grey); line-height: 1.7; }
+        .step-card h3 { font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+        .step-card p { font-size: 13.5px; color: var(--grey); line-height: 1.7; }
 
-        /* THREE POINTS */
-        .points-section { padding: 100px 0; position: relative; z-index: 1; background: var(--black); width: 100%; }
+        /* THREE PILLARS */
+        .points-section { padding: 100px 0; position: relative; z-index: 1; background: var(--black2); width: 100%; border-top: 1px solid var(--border2); }
         .points-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-        .point-card { background: var(--card-bg); border: 1px solid var(--border2); border-radius: 12px; padding: 32px; transition: border-color 0.2s, transform 0.2s; }
+        .point-card { background: var(--card-bg); border: 1px solid var(--border2); border-radius: 12px; padding: 36px; transition: border-color 0.2s, transform 0.2s; }
         .point-card:hover { border-color: var(--border); transform: translateY(-3px); }
-        .point-num { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--purple); letter-spacing: 0.1em; margin-bottom: 14px; display: block; }
-        .point-card h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
-        .point-card p { font-size: 13px; color: var(--grey); line-height: 1.7; }
+        .point-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple); margin-bottom: 16px; display: block; }
+        .point-card h3 { font-size: 1.2rem; font-weight: 600; color: var(--white); margin-bottom: 12px; }
+        .point-card p { font-size: 14px; color: var(--grey); line-height: 1.7; }
 
-        /* WAITLIST */
-        .waitlist-section { background: var(--black2); padding: 100px 24px; position: relative; z-index: 1; width: 100%; }
+        /* WAITLIST / LEAD GEN */
+        .waitlist-section { background: var(--black); padding: 100px 24px; position: relative; z-index: 1; width: 100%; border-top: 1px solid var(--border2); }
         .waitlist-glow { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(123,47,255,0.12) 0%, transparent 70%); pointer-events: none; max-width: 100%; }
-        .waitlist-box { max-width: 460px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 48px; box-shadow: 0 0 60px rgba(123,47,255,0.1); position: relative; z-index: 1; }
-        .waitlist-box h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--white); letter-spacing: 0.03em; margin-bottom: 6px; }
-        .waitlist-box > p { font-size: 14px; color: var(--grey); margin-bottom: 28px; line-height: 1.6; }
+        .waitlist-box { max-width: 480px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 48px; box-shadow: 0 0 60px rgba(123,47,255,0.1); position: relative; z-index: 1; }
+        .waitlist-box h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--white); letter-spacing: 0.03em; margin-bottom: 8px; text-align: center; }
+        .waitlist-box > p { font-size: 14px; color: var(--grey); margin-bottom: 28px; line-height: 1.6; text-align: center; }
         .role-toggle { display: flex; background: var(--black); border-radius: 8px; padding: 4px; margin-bottom: 24px; border: 1px solid var(--border2); }
         .role-toggle input[type="radio"] { display: none; }
-        .role-toggle label { flex: 1; text-align: center; padding: 9px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--grey); cursor: pointer; transition: all 0.2s; margin: 0; display: block; }
+        .role-toggle label { flex: 1; text-align: center; padding: 10px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--grey); cursor: pointer; transition: all 0.2s; margin: 0; display: block; }
         .role-toggle input[type="radio"]:checked + label { background: var(--purple); color: var(--white); box-shadow: 0 0 12px var(--glow); }
+        
         .form-field { margin-bottom: 16px; }
-        .form-field label { display: block; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
-        .form-field input { width: 100%; padding: 11px 14px; background: var(--black); border: 1px solid var(--border2); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--white); outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
-        .form-field input::placeholder { color: rgba(160,160,184,0.4); }
-        .form-field input:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(123,47,255,0.15); }
-        .hidden { display: none; }
-        .submit-btn { width: 100%; padding: 14px; margin-top: 8px; background: var(--purple); color: var(--white); border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 0 20px var(--glow); }
+        .form-field label { display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .form-input { width: 100%; padding: 12px 14px; background: var(--black); border: 1px solid var(--border2); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--white); outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+        select.form-input { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a0a0b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 14px center; background-size: 16px; cursor: pointer; }
+        .form-input::placeholder { color: rgba(160,160,184,0.4); }
+        .form-input:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(123,47,255,0.15); }
+        .hidden { display: none !important; }
+        
+        .submit-btn { width: 100%; padding: 14px; margin-top: 12px; background: var(--purple); color: var(--white); border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 0 20px var(--glow); }
         .submit-btn:hover:not(:disabled) { background: var(--purple2); transform: translateY(-1px); box-shadow: 0 0 32px var(--glow); }
         .submit-btn:disabled { background: #333; box-shadow: none; cursor: not-allowed; }
-        .form-note { text-align: center; font-size: 12px; color: rgba(160,160,184,0.4); margin-top: 12px; }
-        #thank-you { text-align: center; padding: 16px 0; }
-        #thank-you .ty-emoji { font-size: 2.8rem; margin-bottom: 14px; }
-        #thank-you h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--purple); letter-spacing: 0.03em; margin-bottom: 8px; }
-        #thank-you p { font-size: 14px; color: var(--grey); line-height: 1.6; }
+        .form-note { text-align: center; font-size: 12px; color: rgba(160,160,184,0.4); margin-top: 14px; }
+        
+        #thank-you { text-align: center; padding: 24px 0; }
+        #thank-you .ty-emoji { font-size: 3rem; margin-bottom: 16px; }
+        #thank-you h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: #4ade80; letter-spacing: 0.03em; margin-bottom: 8px; }
+        #thank-you p { font-size: 15px; color: var(--grey); line-height: 1.6; }
 
         /* FOOTER */
         footer { background: var(--black); border-top: 1px solid var(--border2); padding: 40px 24px; position: relative; z-index: 1; width: 100%; }
@@ -136,11 +161,13 @@
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
             .nav-right .btn-ghost { display: none; }
-            .stats-grid { grid-template-columns: repeat(3,1fr); gap: 12px; }
+            .stats-grid { grid-template-columns: 1fr; gap: 24px; }
             .how-steps.active { grid-template-columns: 1fr; }
             .points-grid { grid-template-columns: 1fr; }
-            .waitlist-box { padding: 28px 20px; }
+            .waitlist-box { padding: 32px 20px; }
             .footer-inner { flex-direction: column; text-align: center; }
+            .hero-ctas { flex-direction: column; width: 100%; }
+            .hero-ctas .btn { width: 100%; }
         }
     </style>
 </head>
@@ -151,7 +178,7 @@
     <div class="nav-right">
         <a href="marketplace.html" class="btn btn-ghost" style="border-color: var(--purple); color: var(--purple3);">Marketplace</a>
         <a href="#how" class="btn btn-ghost">How it works</a>
-        <a href="#waitlist" class="btn btn-purple">Get early access</a>
+        <a href="#waitlist" class="btn btn-purple" onclick="setRole('brand')">Enterprise Demo</a>
     </div>
 </nav>
 
@@ -159,96 +186,144 @@
 <header class="hero">
     <div class="hero-glow"></div>
     <div class="hero-grid"></div>
-    <div class="hero-badge"><span class="live-dot"></span>Early access open — UK only</div>
-    <h1>THE HUB WHERE<br><span class="hn">HYPE</span> IS BORN</h1>
-    <p class="hero-sub">Brands pay per view.<br>Creators earn per view.</p>
+    
+    <div class="hero-badge"><span class="live-dot"></span>FCA FG24/1 & ASA Compliant</div>
+    
+    <h1>THE CREATOR ENGINE BUILT FOR<br><span class="hn">REGULATED FINANCE</span></h1>
+    <p class="hero-sub">Automated FCA Consumer Duty guardrails meet pure pay-for-performance. Turn raw Gen-Z creators into verified, compliant brand advocates.</p>
+    
     <div class="hero-ctas">
-        <a href="#waitlist" class="btn btn-purple" onclick="setRole('creator')">I'm a Creator</a>
-        <a href="#waitlist" class="btn btn-ghost" onclick="setRole('brand')">I'm a Brand</a>
-    </div>
-    <!-- MARKETPLACE BANNER -->
-    <div style="margin-top: 40px; animation: fadeUp 0.5s 0.4s ease both;">
-        <a href="marketplace.html" class="btn btn-purple" style="padding: 14px 36px; font-size: 16px; letter-spacing: 0.02em;">
-            ⚡ Explore Active Campaigns & Marketplace →
-        </a>
+        <a href="#waitlist" class="btn btn-purple" onclick="setRole('brand')">Book Enterprise Demo</a>
+        <a href="marketplace.html" class="btn btn-ghost">Explore Creator Briefs</a>
     </div>
 </header>
+
+<!-- FINTECH TRUST MARQUEE -->
+<div class="trust-banner">
+    <div class="marquee-inner">
+        <!-- Item Set 1 -->
+        <span class="marquee-item">WealthTech</span>
+        <span class="marquee-item highlight">FCA FG24/1 Compliant</span>
+        <span class="marquee-item">Challenger Banks</span>
+        <span class="marquee-item">Trading Platforms</span>
+        <span class="marquee-item highlight">ASA Safe</span>
+        <span class="marquee-item">Insurtech</span>
+        <span class="marquee-item">Credit Platforms</span>
+        
+        <!-- Item Set 2 (Duplicate for seamless loop) -->
+        <span class="marquee-item">WealthTech</span>
+        <span class="marquee-item highlight">FCA FG24/1 Compliant</span>
+        <span class="marquee-item">Challenger Banks</span>
+        <span class="marquee-item">Trading Platforms</span>
+        <span class="marquee-item highlight">ASA Safe</span>
+        <span class="marquee-item">Insurtech</span>
+        <span class="marquee-item">Credit Platforms</span>
+    </div>
+</div>
+
+<!-- INTERACTIVE VISUALIZER -->
+<section class="visualizer-section">
+    <span class="section-tag" style="margin-bottom: 24px;">The Pre-Publication Gate in Action</span>
+    <div class="vis-container reveal">
+        <div class="scan-line"></div>
+        <div class="vis-header">
+            <span>COGNITIVE_COMPLIANCE_AI.exe</span>
+            <span style="color:#22c55e">● SYSTEM ACTIVE</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <span style="color:var(--grey)">> INGESTING: CREATOR_DRAFT_V1.mp4_TRANSCRIPT...</span>
+        </div>
+        <div style="color: var(--white); margin-bottom: 20px;">
+            "You need to download this new investing app right now! It gives you 
+            <span class="vis-error">guaranteed returns on your money</span>
+            <span class="vis-correction">capital at risk, tax treatment applies</span>
+            and it's completely free to sign up..."
+        </div>
+        <div style="font-size: 12px; color: var(--grey); border-top: 1px solid var(--border2); padding-top: 12px;">
+            <span class="anim-status"></span>
+        </div>
+    </div>
+</section>
 
 <!-- STATS -->
 <div class="stats-bar">
     <div class="stats-grid">
-        <div><div class="stat-val">£0</div><div class="stat-lbl">Brand upfront cost</div></div>
-        <div><div class="stat-val">CPM</div><div class="stat-lbl">Pay only for views</div></div>
-        <div><div class="stat-val">3×</div><div class="stat-lbl">Platforms</div></div>
+        <div class="reveal"><div class="stat-val">£610B</div><div class="stat-lbl">Idle UK Retail Cash Addressed</div></div>
+        <div class="reveal"><div class="stat-val">0%</div><div class="stat-lbl">Brand Regulatory Liability</div></div>
+        <div class="reveal"><div class="stat-val">CPA</div><div class="stat-lbl">Pure Pay-For-Performance</div></div>
     </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="how-section" id="how">
+<!-- ARCHITECTURAL PILLARS -->
+<section class="points-section">
     <div class="container">
-        <span class="section-tag">How it works</span>
-        <h2 class="section-title">Simple for both sides.</h2>
-        <div class="how-toggle">
-            <button class="how-tab active" onclick="switchHow('creator',this)">For Creators</button>
-            <button class="how-tab" onclick="switchHow('brand',this)">For Brands</button>
-        </div>
-        <div class="how-steps active" id="how-creator">
-            <div class="step-card reveal" data-num="1">
-                <div class="step-icon">🔍</div>
-                <h3>Pick a brand</h3>
-                <p>No pitching. No minimums. Just pick what fits.</p>
+        <span class="section-tag">The Institutional Bridge</span>
+        <h2 class="section-title">Built for Scale & Safety.</h2>
+        <div class="points-grid">
+            <div class="point-card reveal">
+                <span class="point-num">01 — Performance Engine</span>
+                <h3>Pay for Verified Conversions</h3>
+                <p>An open marketplace where any vetted creator accesses brand briefs. Payouts are based strictly on verified views, clicks, and conversions. We eliminated the 50k+ follower gate.</p>
             </div>
-            <div class="step-card reveal" data-num="2">
-                <div class="step-icon">🎬</div>
-                <h3>Make content</h3>
-                <p>Get trending tools. Post anywhere.</p>
+            <div class="point-card reveal">
+                <span class="point-num">02 — Cognitive Compliance AI</span>
+                <h3>Pre-Publication Gate</h3>
+                <p>Automated screening of video scripts, disclaimers, and claims against FCA FG24/1 & Section 21 FSMA rules <i>prior</i> to public release. Total brand safety.</p>
             </div>
-            <div class="step-card reveal" data-num="3">
-                <div class="step-icon">💷</div>
-                <h3>Get paid per view</h3>
-                <p>Go viral. Earn more. No cap.</p>
-            </div>
-        </div>
-        <div class="how-steps" id="how-brand">
-            <div class="step-card reveal" data-num="1">
-                <div class="step-icon">📋</div>
-                <h3>Post a bounty</h3>
-                <p>Set your CPM. You control the budget.</p>
-            </div>
-            <div class="step-card reveal" data-num="2">
-                <div class="step-icon">🎬</div>
-                <h3>Creators do the work</h3>
-                <p>Real UK creators. Authentic content. No back-and-forth.</p>
-            </div>
-            <div class="step-card reveal" data-num="3">
-                <div class="step-icon">📊</div>
-                <h3>Pay for what performs</h3>
-                <p>Views verified. Budget unlocks. Zero risk.</p>
+            <div class="point-card reveal">
+                <span class="point-num">03 — Campus-to-Campaign</span>
+                <h3>Zero-CAC Talent Pipeline</h3>
+                <p>We run paid university workshops upskilling students in viral formats and regulatory literacy, establishing an exclusive, highly-trained creator talent pipeline.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- THREE POINTS -->
-<section class="points-section">
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
     <div class="container">
-        <span class="section-tag">Why HypeNex</span>
-        <h2 class="section-title">Different by design.</h2>
-        <div class="points-grid">
-            <div class="point-card reveal">
-                <span class="point-num">01 —</span>
-                <h3>Equal opportunity</h3>
-                <p>Any creator. Any size. Great content wins.</p>
+        <span class="section-tag">Workflow</span>
+        <h2 class="section-title">Simple. Transparent. Scalable.</h2>
+        <div class="how-toggle">
+            <button class="how-tab active" onclick="switchHow('brand',this)">For Brands</button>
+            <button class="how-tab" onclick="switchHow('creator',this)">For Creators</button>
+        </div>
+        
+        <!-- Brand Flow -->
+        <div class="how-steps active" id="how-brand">
+            <div class="step-card reveal">
+                <div class="step-icon">📋</div>
+                <h3>Launch Enterprise Pilot</h3>
+                <p>Set your target CPA/CPM and submit your brief. You control the acquisition budget with zero upfront retainer waste.</p>
             </div>
-            <div class="point-card reveal">
-                <span class="point-num">02 —</span>
-                <h3>Performance over promises</h3>
-                <p>Pay for views. Earn for views. Everyone wins.</p>
+            <div class="step-card reveal">
+                <div class="step-icon">🛡️</div>
+                <h3>Pre-Publication Gate</h3>
+                <p>Raw UK creators produce authentic content. Our Cognitive AI intercepts and vets every draft for FCA compliance before it goes live.</p>
             </div>
-            <div class="point-card reveal">
-                <span class="point-num">03 —</span>
-                <h3>Built for the UK</h3>
-                <p>ASA-compliant. UK creators. UK brands.</p>
+            <div class="step-card reveal">
+                <div class="step-icon">📈</div>
+                <h3>Scale Acquisition</h3>
+                <p>Budgets unlock strictly on verified conversions and performance. Total cost certainty with zero regulatory risk.</p>
+            </div>
+        </div>
+        
+        <!-- Creator Flow -->
+        <div class="how-steps" id="how-creator">
+            <div class="step-card reveal">
+                <div class="step-icon">🔍</div>
+                <h3>Access Regulated Briefs</h3>
+                <p>Find top-tier WealthTech & FinTech campaigns. No pitching, no middleman agencies, and absolutely no follower gates.</p>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-icon">🤖</div>
+                <h3>AI Compliance Check</h3>
+                <p>Submit your video draft. Our system instantly verifies that your content meets ASA and FCA legal guidelines to protect you.</p>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-icon">💷</div>
+                <h3>Earn for Conversions</h3>
+                <p>Post your approved content. Go viral. Drive account openings for the brand and earn unlimited, uncapped upside.</p>
             </div>
         </div>
     </div>
@@ -257,26 +332,57 @@
 <!-- WAITLIST -->
 <section class="waitlist-section" id="waitlist">
     <div class="waitlist-glow"></div>
-    <div class="waitlist-box">
+    <div class="waitlist-box reveal">
         <h2>GET EARLY ACCESS</h2>
-        <p>Be first in. Join now.</p>
+        <p>Phase 1 Enterprise Pilots are opening soon.</p>
         <form id="signup-form">
             <div class="role-toggle">
-                <input type="radio" name="role" id="role-creator" value="creator" checked onchange="toggleCompany(false)">
+                <input type="radio" name="role" id="role-brand" value="brand" checked onchange="toggleFormFields(true)">
+                <label for="role-brand">I'm a Brand / CCO</label>
+                
+                <input type="radio" name="role" id="role-creator" value="creator" onchange="toggleFormFields(false)">
                 <label for="role-creator">I'm a Creator</label>
-                <input type="radio" name="role" id="role-brand" value="brand" onchange="toggleCompany(true)">
-                <label for="role-brand">I'm a Brand</label>
             </div>
-            <div class="form-field"><label for="name">Full name</label><input type="text" id="name" placeholder="Your name" required></div>
-            <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="you@example.com" required></div>
-            <div class="form-field hidden" id="company-field"><label for="company">Brand name</label><input type="text" id="company" placeholder="Your brand"></div>
-            <button type="submit" class="submit-btn" id="submit-btn">Join the waitlist →</button>
-            <p class="form-note">No spam.</p>
+            
+            <div class="form-field">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" class="form-input" placeholder="Your name" required>
+            </div>
+            
+            <div class="form-field">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" class="form-input" placeholder="name@company.com" required>
+            </div>
+            
+            <!-- Dynamic Brand Fields -->
+            <div id="brand-fields">
+                <div class="form-field">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" class="form-input" placeholder="e.g. Monzo, Plum, Freetrade" required>
+                </div>
+                
+                <div class="form-field">
+                    <label for="industry">Industry Sector</label>
+                    <select id="industry" class="form-input" required>
+                        <option value="" disabled selected>Select your sector...</option>
+                        <option value="wealthtech">WealthTech / Investing</option>
+                        <option value="challenger-bank">Challenger Bank</option>
+                        <option value="insurtech">Insurtech</option>
+                        <option value="trading">Trading Platform</option>
+                        <option value="credit">Credit / Lending</option>
+                        <option value="other">Other Financial Services</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">Request Access →</button>
+            <p class="form-note">Your data is secure. No spam, ever.</p>
         </form>
+        
         <div id="thank-you" class="hidden">
-            <div class="ty-emoji">🔥</div>
-            <h3>YOU'RE IN.</h3>
-            <p>Welcome to HypeNex. We'll be in touch soon.</p>
+            <div class="ty-emoji">🛡️</div>
+            <h3>APPLICATION RECEIVED</h3>
+            <p>Our partnerships team will review your details and be in touch regarding Phase 1 pilot availability.</p>
         </div>
     </div>
 </section>
@@ -284,50 +390,84 @@
 <footer>
     <div class="footer-inner">
         <a class="footer-logo" href="#">HYPE<span>NEX</span></a>
-        <p>© 2026 HypeNex · Built in the UK</p>
+        <p>© 2026 HypeNex Technologies Ltd · Built in London</p>
         <div class="footer-links">
-            <a href="mailto:hello@hypenex.co.uk">hello@hypenex.co.uk</a>
-            <a href="#">Privacy</a>
+            <a href="mailto:tanishqgarg@hypenex.co.uk">tanishqgarg@hypenex.co.uk</a>
+            <a href="#">Compliance Terms</a>
         </div>
     </div>
 </footer>
 
 <script>
+    // Navbar Scroll Effect
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
     });
+
+    // How It Works Toggle
     function switchHow(role, btn) {
         document.querySelectorAll('.how-tab').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.how-steps').forEach(s => s.classList.remove('active'));
         btn.classList.add('active');
         document.getElementById('how-' + role).classList.add('active');
     }
-    function toggleCompany(show) {
-        const field = document.getElementById('company-field');
-        const input = document.getElementById('company');
-        if (show) { field.classList.remove('hidden'); input.setAttribute('required','required'); }
-        else       { field.classList.add('hidden');    input.removeAttribute('required'); }
+
+    // Dynamic Form Fields based on Role Selection
+    function toggleFormFields(isBrand) {
+        const brandFields = document.getElementById('brand-fields');
+        const companyInput = document.getElementById('company');
+        const industrySelect = document.getElementById('industry');
+        const emailLabel = document.querySelector('label[for="email"]');
+        const emailInput = document.getElementById('email');
+
+        if (isBrand) { 
+            brandFields.classList.remove('hidden'); 
+            companyInput.setAttribute('required', 'required'); 
+            industrySelect.setAttribute('required', 'required');
+            emailLabel.textContent = 'Work Email';
+            emailInput.placeholder = 'name@company.com';
+        } else { 
+            brandFields.classList.add('hidden'); 
+            companyInput.removeAttribute('required'); 
+            industrySelect.removeAttribute('required');
+            emailLabel.textContent = 'Email Address';
+            emailInput.placeholder = 'you@example.com';
+        }
     }
+
+    // Direct CTA role setter
     function setRole(role) {
         const r = document.getElementById('role-' + role);
-        if (r) { r.checked = true; toggleCompany(role === 'brand'); }
+        if (r) { 
+            r.checked = true; 
+            toggleFormFields(role === 'brand'); 
+        }
     }
+
+    // Scroll Animations
     const observer = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Form Submission Handling
     document.getElementById('signup-form').addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = document.getElementById('submit-btn');
-        btn.textContent = 'Submitting...';
+        btn.textContent = 'Verifying...';
         btn.disabled = true;
+        
+        const role = document.querySelector('input[name="role"]:checked').value;
         const data = {
-            role: document.querySelector('input[name="role"]:checked').value,
+            role: role,
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
-            company: document.getElementById('company').value,
+            company: role === 'brand' ? document.getElementById('company').value : 'N/A',
+            industry: role === 'brand' ? document.getElementById('industry').value : 'N/A',
         };
+        
         try {
+            // Using Formspree (or your preferred endpoint)
             const res = await fetch('https://formspree.io/f/xqenajbz', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
